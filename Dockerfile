@@ -36,7 +36,14 @@ ENV IMGPROXY_NETWORK="tcp" \
     IMGPROXY_STRIP_COLOR_PROFILE=true \
     IMGPROXY_STRIP_METADATA=true \
     IMGPROXY_SVG_FIX_UNSUPPORTED=false \
-    IMGPROXY_USE_LINEAR_COLORSPACE=false
+    IMGPROXY_USE_LINEAR_COLORSPACE=false \
+    # # تنظیمات امنیتی
+    # IMGPROXY_KEY="your-key-here" \
+    # IMGPROXY_SALT="your-salt-here" \
+    # اجازه دسترسی به منابع خارجی
+    IMGPROXY_ALLOWED_SOURCES="*" \
+    IMGPROXY_ALLOW_PRIVATE_SOURCE_ADDRESSES=true \
+    IMGPROXY_IGNORE_SSL_VERIFICATION=true
 
 # پورت‌های مورد نیاز
 EXPOSE 8080
