@@ -46,12 +46,11 @@ services:
       retries: 3
     volumes:
       - ./www:/home:cached
+    ports:
+      - "3390:3390"
     environment:
-      ### Server
-      ### See: https://docs.imgproxy.net/configuration/options#server
       IMGPROXY_NETWORK: "tcp"
-      IMGPROXY_BIND: ":8080"
-
+      IMGPROXY_BIND: ":3390"
       ### Image sources
       ### See: https://docs.imgproxy.net/configuration/options#image-sources
       IMGPROXY_LOCAL_FILESYSTEM_ROOT: /home
