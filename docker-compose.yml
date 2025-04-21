@@ -11,6 +11,8 @@ networks:
 ################################################################################
   default:
     driver: bridge
+  imgproxy_network:
+    driver: bridge
 
 
 services:
@@ -33,6 +35,8 @@ services:
       - imgproxy:imgproxy
     environment:
       NGINX_ENTRYPOINT_QUIET_LOGS: 1
+    networks:
+      - imgproxy_network
 
 ################################################################################
   imgproxy:
@@ -249,3 +253,5 @@ services:
       # IMGPROXY_AIRBRAKE_PROJECT_ID: 0
       # IMGPROXY_AIRBRAKE_PROJECT_KEY: ""
       # IMGPROXY_AIRBRAKE_ENVIRONMENT: "production"
+    networks:
+      - imgproxy_network
