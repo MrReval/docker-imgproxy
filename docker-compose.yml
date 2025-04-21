@@ -26,8 +26,8 @@ services:
       - ./cache:/var/cache/nginx/imgproxy:delegated
       - ./logs:/var/log/nginx:delegated
     ports:
-      - 3390:3390
-      - 3390:3390/tcp
+      - 3392:3392
+      - 3392:3392/tcp
     links:
       - imgproxy:imgproxy
     environment:
@@ -49,7 +49,7 @@ services:
       - "3390:3390"
     environment:
       IMGPROXY_NETWORK: "tcp"
-      IMGPROXY_BIND: ":3390"
+      IMGPROXY_BIND: ":3392"
       ### Image sources
       ### See: https://docs.imgproxy.net/configuration/options#image-sources
       IMGPROXY_LOCAL_FILESYSTEM_ROOT: /home
