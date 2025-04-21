@@ -26,9 +26,9 @@ services:
       - ./cache:/var/cache/nginx/imgproxy:delegated
       - ./logs:/var/log/nginx:delegated
     ports:
-      - 3393:80
-      - 3393:443/tcp
-      - 3393:443/udp
+      - 3394:80
+      - 3394:443/tcp
+      - 3394:443/udp
     links:
       - imgproxy:imgproxy
     environment:
