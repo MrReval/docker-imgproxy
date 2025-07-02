@@ -1,6 +1,5 @@
 FROM darthsim/imgproxy:latest
 
-# تنظیمات محیطی
 ENV IMGPROXY_NETWORK="tcp" \
     IMGPROXY_BIND=":8080" \
     IMGPROXY_LOG_LEVEL="info" \
@@ -21,10 +20,8 @@ ENV IMGPROXY_NETWORK="tcp" \
     IMGPROXY_AUTO_ROTATE=true \
     IMGPROXY_TTL=2592000 \
     IMGPROXY_CACHE_CONTROL_PASSTHROUGH=false \
-    IMGPROXY_DOWNLOAD_TIMEOUT=15  # ← این خط جدید اضافه شده
+    IMGPROXY_DOWNLOAD_TIMEOUT=15
 
-# پورت‌های مورد نیاز
 EXPOSE 8080
 
-# دستور اجرا
 CMD ["imgproxy"]
